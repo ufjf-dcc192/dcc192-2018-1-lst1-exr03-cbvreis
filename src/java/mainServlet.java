@@ -23,7 +23,7 @@ public class mainServlet extends HttpServlet {
             out.println("<title>Servlet mainServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<p><a href = 'juros.html'/> Exercício a e b </a> </p>");
+            out.println("<p><a href = 'juros-table.html'/> Exercício a e b </a> </p>");
             out.println("<p><a href = 'juros-form.html'/> Exercício c e d </a> </p>");
             out.println("</body>");
             out.println("</html>");

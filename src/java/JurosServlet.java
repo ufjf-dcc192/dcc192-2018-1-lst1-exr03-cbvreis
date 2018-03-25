@@ -31,22 +31,21 @@ public class JurosServlet extends HttpServlet {
             out.println("<body>");
 
             /*EXERCICIO A*/
+            out.println("<h1> Exercício 01</h1>");
             out.println("<p>Montante final com taxa de Juros para 12 meses: R$" + montante + "</p>");
             /*ESPAÇAMENTO*/
             out.println("<br/>");
             out.println("<br/>");
             out.println("<hr>");
 
-            
             /*EXERCICIO B*/
+            out.println("<h1> Exercício 02</h1>");
             out.println("<table>");
-
             out.println("<tr>");
             out.println("<th> Taxa 0.5</th>");
             out.println("<th> Taxa 1.0</th>");
             out.println("<th> Taxa 1.5 </th>");
             out.println("</tr>");
-
             for (int i = 1; i <= tempo; i++) {
                 out.println("<tr>");
                 out.println("<td>" + capital * (1 + i * 0.5) + "</td>");
@@ -55,16 +54,8 @@ public class JurosServlet extends HttpServlet {
                 out.println("</tr>");
 
             }
-
             out.println("</table>");
-
-            
-            
             /*EXERCICIO C*/
-
-                        
-                        
-                        
             out.println("</body>");
             out.println("</html>");
         }

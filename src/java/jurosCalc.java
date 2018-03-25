@@ -10,19 +10,30 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = {"/juros-calc.html"})
 public class jurosCalc extends HttpServlet {
-
+    double taxa, tempo, capital;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        double taxa = (Double.parseDouble( request.getParameter("taxa")))/100;
-        double tempo = Double.parseDouble( request.getParameter("tempo"));
-        double capital = Double.parseDouble( request.getParameter("capital"));
-        
-        
-        
+       PrintWriter out = response.getWriter();
+        try {
+            taxa = (Double.parseDouble(request.getParameter("taxa"))) / 100;
+        } catch (NumberFormatException | ArithmeticException e) {
+            taxa = 0.0001;
+        }
+        try {
+            tempo = Double.parseDouble(request.getParameter("tempo"));
+        } catch (NumberFormatException | ArithmeticException f) {
+            tempo = 12;
+        }
+        try {
+            capital = Double.parseDouble(request.getParameter("capital"));
+        } catch (NumberFormatException | ArithmeticException e) {
+            capital = 1000;
+        }
+       
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+       
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -63,4 +74,4 @@ public class jurosCalc extends HttpServlet {
     }
 
     
-}}
+}
